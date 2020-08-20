@@ -1,0 +1,19 @@
+defaultSeverity: "error"
+extends:
+  - "tslint:latest"
+rules:
+  max-line-length:
+    severity: warning
+    options: [120]
+  no-consecutive-blank-lines: false
+  no-console:
+    severity: warning
+    options:
+      - debug
+      - info
+      - log
+      - time
+      - timeEnd
+      - trace
+  variable-name:
+    severity: warning

@@ -1,0 +1,6 @@
+type Mutation {
+  addUser(first_name: String!, last_name: String!): User
+  updateUser(user_id: ID!, first_name: String, last_name: String): User
+  deleteUser(user_id: ID!): User
+  test: String
+}

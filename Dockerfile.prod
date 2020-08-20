@@ -1,0 +1,33 @@
+FROM node:14 AS builder
+
+WORKDIR /usr/src/app
+
+COPY . .
+
+RUN npm run build
+
+FROM node:14-alpine3.11
+
+RUN apk add --no-cache --upgrade bash && \
+    apk add curl
+
+ENV SERVER_PORT 8080
+ENV WORK_DIR=/usr/src/app
+
+WORKDIR ${WORK_DIR}
+
+COPY package*.json ./
+
+RUN npm ci --only=production
+
+RUN mkdir graphql graphql/mutations graphql/queries graphql/types
+
+COPY src/infrastructure/graphql/mutations/mutations.graphql graphql/mutations
+COPY src/infrastructure/graphql/queries/queries.graphql graphql/queries
+COPY src/infrastructure/graphql/types/types.graphql graphql/types
+
+COPY ./wait-for.sh .
+
+COPY --from=builder /usr/src/app/build build
+
+EXPOSE ${SERVER_PORT}
