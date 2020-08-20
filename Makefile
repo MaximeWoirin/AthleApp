@@ -1,4 +1,9 @@
-backend-build:
+make init:
+	./config.sh
+	npm i
+
+build:
+	npm run build
 	docker-compose -f docker-compose.dev.yml pull --ignore-pull-failures
 	docker-compose -f docker-compose.dev.yml build
 
@@ -8,7 +13,7 @@ up:
 down: 
 	docker-compose -f docker-compose.dev.yml down
 
-backend-logs:
+logs:
 	docker-compose -f docker-compose.dev.yml logs -f backend
 
 prod:
