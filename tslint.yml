@@ -1,6 +1,7 @@
 defaultSeverity: "error"
 extends:
   - "tslint:latest"
+  - "tslint-config-prettier"
 rules:
   max-line-length:
     severity: warning

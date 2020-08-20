@@ -9,11 +9,11 @@ const PORT = process.env.SERVER_PORT || 8080;
 let app = express();
 
 Promise.all([init_db(), init_mw(), init_rt(app)])
-  .then(() => {
-    app.listen(PORT, () => {
-      console.log(`Server listening on port ${PORT}.`);
+    .then(() => {
+        app.listen(PORT, () => {
+            console.log(`Server listening on port ${PORT}.`);
+        });
+    })
+    .catch((error) => {
+        console.log(error);
     });
-  })
-  .catch((error) => {
-    console.log(error);
-  });

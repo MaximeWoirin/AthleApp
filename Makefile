@@ -24,3 +24,6 @@ test:
 
 compile: 
 	npm run build
+
+format:
+	npm run format
