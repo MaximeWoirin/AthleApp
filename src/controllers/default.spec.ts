@@ -1,4 +1,4 @@
-const assert = require("assert").strict;
+import assert from "assert";
 
 describe("exemple test", () => {
     it("should do something", () => {
