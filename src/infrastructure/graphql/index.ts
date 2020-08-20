@@ -1,4 +1,4 @@
-const { buildSchema } = require("graphql");
+import { buildSchema } from "graphql";
 
 import { load_mutations, root_mutations } from "./mutations";
 import { load_queries, root_queries } from "./queries";
