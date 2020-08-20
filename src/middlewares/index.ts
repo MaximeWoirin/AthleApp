@@ -1,1 +1,3 @@
-export const init_mw = async () => {};
+export const init_mw = async () => {
+    console.log("middlewares okay !");
+};

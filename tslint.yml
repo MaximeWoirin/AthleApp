@@ -1,20 +1,22 @@
 defaultSeverity: "error"
 extends:
-  - "tslint:latest"
-  - "tslint-config-prettier"
+    - "tslint:latest"
+    - "tslint-config-prettier"
 rules:
-  max-line-length:
-    severity: warning
-    options: [120]
-  no-consecutive-blank-lines: false
-  no-console:
-    severity: warning
-    options:
-      - debug
-      - info
-      - log
-      - time
-      - timeEnd
-      - trace
-  variable-name:
-    severity: warning
+    max-line-length:
+        severity: warning
+        options: [120]
+    no-consecutive-blank-lines: false
+    no-console:
+        severity: warning
+        options:
+            - debug
+            - info
+            - log
+            - time
+            - timeEnd
+            - trace
+    variable-name:
+        severity: none
+    object-literal-shorthand:
+        severity: none

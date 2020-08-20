@@ -6,7 +6,7 @@ import { init_rt } from "./routes";
 
 const PORT = process.env.SERVER_PORT || 8080;
 
-let app = express();
+const app = express();
 
 Promise.all([init_db(), init_mw(), init_rt(app)])
     .then(() => {

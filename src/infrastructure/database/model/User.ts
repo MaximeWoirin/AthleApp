@@ -1,9 +1,9 @@
 import { Model, Sequelize, DataTypes } from "sequelize";
 
 export class User extends Model {
-    public userId!: number;
-    public firstName!: string;
-    public lastName!: string;
+    public user_id!: number;
+    public first_name!: string;
+    public last_name!: string;
     public readonly createdAt!: Date;
     public readonly updatedAt!: Date;
 }
@@ -11,18 +11,18 @@ export class User extends Model {
 export const init_model_user = (sequelize: Sequelize) => {
     User.init(
         {
-            userId: {
+            user_id: {
                 type: DataTypes.INTEGER.UNSIGNED,
                 autoIncrement: true,
                 allowNull: false,
                 unique: true,
                 primaryKey: true,
             },
-            firstName: {
+            first_name: {
                 type: new DataTypes.STRING(128),
                 allowNull: false,
             },
-            lastName: {
+            last_name: {
                 type: new DataTypes.STRING(128),
                 allowNull: false,
             },

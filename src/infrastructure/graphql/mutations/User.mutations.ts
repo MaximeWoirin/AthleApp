@@ -1,24 +1,24 @@
 import { User } from "../../database/model/User";
 
 export const userMutations = {
-    addUser: async (params: any) => {
-        return await User.create(params);
+    addUser: async (params: any): Promise<User | null> => {
+        return User.create(params);
     },
-    updateUser: async (params: any) => {
-        const userId = params.userId;
-        delete params.userId;
+    updateUser: async (params: any): Promise<User | null> => {
+        const user_id = params.user_id;
+        delete params.user_id;
         await User.update(
             { ...params },
             {
                 where: {
-                    userId: userId,
+                    user_id: user_id,
                 },
             }
         );
-        return await User.findByPk(userId);
+        return User.findByPk(user_id);
     },
-    deleteUser: async (params: any) => {
-        const user: User | null = await User.findByPk(params.userId);
+    deleteUser: async (params: any): Promise<User | null> => {
+        const user: User | null = await User.findByPk(params.user_id);
         await user?.destroy();
         return user;
     },

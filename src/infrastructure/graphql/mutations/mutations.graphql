@@ -1,6 +1,6 @@
 type Mutation {
-    addUser(firstName: String!, lastName: String!): User
-    updateUser(userId: ID!, firstName: String, lastName: String): User
-    deleteUser(userId: ID!): User
+    addUser(first_name: String!, last_name: String!): User
+    updateUser(user_id: ID!, first_name: String, last_name: String): User
+    deleteUser(user_id: ID!): User
     test: String
 }

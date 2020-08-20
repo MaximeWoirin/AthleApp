@@ -1,9 +1,9 @@
 import { User } from "../../database/model/User";
 export const userQueries = {
-    users: async () => {
-        return await User.findAll();
+    users: async (): Promise<User[]> => {
+        return User.findAll();
     },
-    user: async (params: any) => {
-        return await User.findByPk(params.userId);
+    user: async (params: any): Promise<User | null> => {
+        return User.findByPk(params.user_id);
     },
 };
