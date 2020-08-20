@@ -5,27 +5,27 @@ name: pre-commit
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
-  push:
-  pull_request:
+    push:
+    pull_request:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  checks:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run a one-line script
-        run: echo Hello, world!
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v1.4.3
-        with:
-          # Set always-auth in npmrc
-          # always-auth: # optional, default is false
-          node-version: 14
-      - name: Intall dependencies
-        run: npm i
-      - name: format
-        run: make format
-      - name: lint
-        run: make lint
-      - name: test
-        run: make test
+    checks:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Run a one-line script
+              run: echo Hello, world!
+            - name: Setup Node.js environment
+              uses: actions/setup-node@v1.4.3
+              with:
+                  # Set always-auth in npmrc
+                  # always-auth: # optional, default is false
+                  node-version: 14
+            - name: Intall dependencies
+              run: npm i
+            - name: format
+              run: npm run format
+            - name: lint
+              run: npm run lint
+            - name: test
+              run: npm run test
