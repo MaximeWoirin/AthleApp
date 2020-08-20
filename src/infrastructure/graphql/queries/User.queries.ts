@@ -4,6 +4,6 @@ export const userQueries = {
         return await User.findAll();
     },
     user: async (params: any) => {
-        return await User.findByPk(params.user_id);
+        return await User.findByPk(params.userId);
     },
 };

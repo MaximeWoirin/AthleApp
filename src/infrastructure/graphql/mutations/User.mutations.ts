@@ -5,20 +5,20 @@ export const userMutations = {
         return await User.create(params);
     },
     updateUser: async (params: any) => {
-        const user_id = params.user_id;
-        delete params.user_id;
+        const userId = params.userId;
+        delete params.userId;
         await User.update(
             { ...params },
             {
                 where: {
-                    user_id: user_id,
+                    userId: userId,
                 },
             }
         );
-        return await User.findByPk(user_id);
+        return await User.findByPk(userId);
     },
     deleteUser: async (params: any) => {
-        const user: User | null = await User.findByPk(params.user_id);
+        const user: User | null = await User.findByPk(params.userId);
         await user?.destroy();
         return user;
     },

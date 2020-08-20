@@ -1,7 +1,7 @@
 type User {
-    user_id: ID
-    first_name: String
-    last_name: String
+    userId: ID
+    firstName: String
+    lastName: String
     createdAt: String
     updatedAt: String
 }
