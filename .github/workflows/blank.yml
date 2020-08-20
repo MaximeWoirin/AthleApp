@@ -13,6 +13,7 @@ jobs:
     checks:
         runs-on: ubuntu-latest
         steps:
+            - uses: actions/checkout@v2
             - name: Run a one-line script
               run: echo Hello, world!
             - name: Setup Node.js environment
@@ -21,11 +22,7 @@ jobs:
                   # Set always-auth in npmrc
                   # always-auth: # optional, default is false
                   node-version: 14
-            - name: Intall dependencies
-              run: npm i
-            - name: format
-              run: npm run format
-            - name: lint
-              run: npm run lint
-            - name: test
-              run: npm run test
+            - run: npm i
+            - run: npm run format
+            - run: npm run lint
+            - run: npm run test
