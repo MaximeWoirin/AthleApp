@@ -6,7 +6,7 @@ services:
     image: mysql:8.0
     environment:
       - MYSQL_ROOT_PASSWORD
-      - MYSQL_DATABASE
+      - MYSQL_DATABASE=${MYSQL_DATABASE}-dev
     ports:
       - "3306:3306"
     healthcheck:
@@ -37,7 +37,7 @@ services:
     environment:
       - ENV=dev
       - MYSQL_ROOT_PASSWORD
-      - MYSQL_DATABASE
+      - MYSQL_DATABASE=${MYSQL_DATABASE}-dev
       - GRAPHQL_DIR=/usr/src/app/src/infrastructure/graphql
     volumes:
       - type: bind

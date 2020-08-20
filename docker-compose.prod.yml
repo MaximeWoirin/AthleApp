@@ -6,7 +6,7 @@ services:
     image: mysql:8.0
     environment:
       - MYSQL_ROOT_PASSWORD
-      - MYSQL_DATABASE
+      - MYSQL_DATABASE=${MYSQL_DATABASE}-prod
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       timeout: 45s
@@ -24,7 +24,7 @@ services:
     environment:
       - ENV=prod
       - MYSQL_ROOT_PASSWORD
-      - MYSQL_DATABASE
+      - MYSQL_DATABASE=${MYSQL_DATABASE}-prod
       - GRAPHQL_DIR=/usr/src/app/graphql
     ports:
       - "${BACKEND_PORT}:8080"
