@@ -1,7 +1,7 @@
 {
-  "name": "athle-app-back",
+  "name": "",
   "version": "1.0.0",
-  "description": "Application to help my coach managing our training group",
+  "description": "",
   "main": "build/server.js",
   "scripts": {
     "dev": "nodemon --inspect=0.0.0.0:9229 src/server.ts",
